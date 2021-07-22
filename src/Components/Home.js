@@ -1,8 +1,9 @@
-import React, { useDebugValue } from 'react'
+import React from 'react'
 import HomeCard from './HomeCard.js'
+import Search from './Search.js'
 
 
-function Home({dogs}) {
+function Home({dogs,handleSearchChange, search}) {
 
 
 let obj = dogs
@@ -13,6 +14,10 @@ for(let key in obj){
     array.push(key);
   }
 }
+
+
+
+  
 
 
  
@@ -30,6 +35,13 @@ const mappedDogs = array.map((e, i) => {
     <>
     <div>
         <h1>Dog List</h1>
+        
+    </div>
+    <div>
+        <Search
+            search={search}
+            handleSearchChange={handleSearchChange}
+        />
     </div>
     <div className="card-flex">
         {mappedDogs}

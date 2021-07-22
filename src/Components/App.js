@@ -8,6 +8,7 @@ import { Switch, Route} from "react-router-dom";
 function App() {
   const [dogs, setDogs] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
+  const[search, setSearch] = useState("")
 
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
@@ -20,14 +21,31 @@ function App() {
     
   }, [])
 
+
+  function handleSearchChange(newSearch){
+    setSearch(newSearch)
+  }
+
+  //   const displayedDogs = array.filter( expense => 
+  // expense.name.toLowerCase().includes(search.toLowerCase()))
+
+
   if(!isLoaded) return <h1>Loading</h1>
+
+  
+
+ 
 
   return (
     <div>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home dogs={dogs}/>
+          <Home 
+          dogs={dogs}
+          handleSearchChange={handleSearchChange}
+          search={search}
+            />
         </Route>
       </Switch>
     </div>
