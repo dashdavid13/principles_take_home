@@ -1,4 +1,21 @@
-/* Nav Bar */
+
+.dogs_name_container{
+    border-style:solid;
+    margin:5px;
+}
 
 
-/* Nav Bar */
+.dog_name{
+    text-align: center;
+    margin: 20px;
+}
+
+
+.card-flex{
+    border-style:solid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: space-around;
+    margin: 5px;
+}
