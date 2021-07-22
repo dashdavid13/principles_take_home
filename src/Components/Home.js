@@ -16,12 +16,14 @@ for(let key in obj){
 }
 
 
+const filteredDogs = array.filter(dog => {
+    return dog.toLowerCase().includes(search.toLowerCase());
+  });
+
 
   
-
-
  
-const mappedDogs = array.map((e, i) => {
+const mappedDogs = filteredDogs.map((e, i) => {
     
     return (<HomeCard
         key={i}

@@ -26,8 +26,8 @@ function App() {
     setSearch(newSearch)
   }
 
-  //   const displayedDogs = array.filter( expense => 
-  // expense.name.toLowerCase().includes(search.toLowerCase()))
+
+
 
 
   if(!isLoaded) return <h1>Loading</h1>
