@@ -3,12 +3,17 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home.js'
 import  Nav from './Nav.js'
 import { Switch, Route} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+
 
 
 function App() {
   const [dogs, setDogs] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
   const[search, setSearch] = useState("")
+
+  const history = useHistory()
 
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
@@ -26,7 +31,9 @@ function App() {
     setSearch(newSearch)
   }
 
-
+function returnHome(){
+  history.push("/")
+}
 
 
 
@@ -38,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <Nav />
+      <Nav returnHome={returnHome} />
       <Switch>
         <Route exact path="/">
           <Home 
