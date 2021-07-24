@@ -1,6 +1,7 @@
 
 .dogs_name_container{
-    border-style:solid;
+    background-color: #52f1f133;
+    border-radius: 100%;
     margin:5px;
 }
 
@@ -10,13 +11,27 @@
     margin: 20px;
 }
 
-
+.dog-image{
+    width: 250px;
+    height: 300px;
+    margin:4px;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+}
 
 .top-container{
     display:flex;
     flex-direction: column;
     align-content:space-between;
     justify-content:space-between
+}
+
+.image-container{
+    display: flex;
+   justify-content: center;
+   align-content: center;
+   height: 600px;
 }
 
 .js-search{
@@ -43,7 +58,6 @@
    
 }
 .card-flex{
-    border-style:solid;
     display: flex;
     flex-wrap: wrap;
     flex-direction:row;
@@ -72,7 +86,7 @@ css for nav bar  */
     height: 120px;
     background-color:#00B4CC;
     box-shadow: 1px 3px #a0c2cf;
-    
+    border-radius: 4px;
   }
 
   

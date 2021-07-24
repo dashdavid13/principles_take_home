@@ -40,12 +40,11 @@ if(!isLoaded) return <h1>Loading</h1>
 // diplay the 4 random images
     return (
         <>
-    <div>
-        <h1>{pups}</h1>
-        <img alt="dog" src={dogImage["image1"].data.message}/>
-        <img alt="dog" src={dogImage["image2"].data.message}/>
-        <img alt="dog" src={dogImage["image3"].data.message}/>
-        <img alt="dog" src={dogImage["image4"].data.message}/>
+    <div className="image-container">
+        <img className="dog-image" alt="dog" src={dogImage["image1"].data.message}/>
+        <img className="dog-image" alt="dog" src={dogImage["image2"].data.message}/>
+        <img className="dog-image" alt="dog" src={dogImage["image3"].data.message}/>
+        <img className="dog-image" alt="dog" src={dogImage["image4"].data.message}/>
     </div>
     </>
     )
