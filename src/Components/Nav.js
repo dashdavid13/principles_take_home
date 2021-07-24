@@ -1,14 +1,14 @@
 import React from 'react'
+import paw from '../Images/paw.png'
 
 
 function Nav({returnHome}) {
     return (
-    <header>
-        <nav>
-            <h1>Title</h1>
-            <h4 onClick={returnHome}>HomePage</h4>
-        </nav>
-    </header>
+    <div class="separador">
+    <div id="header-nav">
+                <h4 className="a" onClick={returnHome}><img className="paw"src={paw} alt="paw"/></h4>
+    </div>
+    </div>
     )
 }
 

@@ -9,6 +9,8 @@ function Home({dogs,handleSearchChange, search, clicked}) {
 
 const history = useHistory()
 
+
+// turn request into an array to be about to filter and map
 let obj = dogs
 let array = [];
 
@@ -37,11 +39,7 @@ const mappedDogs = filteredDogs.map((e, i) => {
 
     return (
     <>
-    <div>
-        <h1>Dog List</h1>
-        
-    </div>
-    <div>
+    <div className="search-top">
         <Search
             search={search}
             handleSearchChange={handleSearchChange}

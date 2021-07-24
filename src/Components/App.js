@@ -13,12 +13,14 @@ function App() {
   const [dogs, setDogs] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
   const[search, setSearch] = useState("")
-  const [dogShow, setDogShow] = useState(false)
   const [currentDog, setCurrentDog] = useState(null)
+ 
 
 
   const history = useHistory()
 
+
+  // request to get all names
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())
@@ -31,18 +33,22 @@ function App() {
   }, [])
 
 
+
+  
+
   function handleSearchChange(newSearch){
     setSearch(newSearch)
   }
 
+
+  // navigate back to home page
 function returnHome(){
   history.push("/")
 }
 
-  
+  // onClick of each dog name that brings to detail page
 function clicked(pups){
   setCurrentDog(pups)
-  setDogShow(true)
   history.push("/Detail")
   
 }
@@ -52,20 +58,8 @@ function clicked(pups){
 
 if(!isLoaded) return <h1>Loading</h1>
 
-
-
-const test = () => {
   return (
-  <DogPhotos pups={currentDog}/>
-  )
-  
-}
-
-
-
-
-  return (
-    <div>
+    <div className="top-container">
       <Nav returnHome={returnHome} />
       <Switch>
         <Route exact path="/">
@@ -77,7 +71,7 @@ const test = () => {
             />
         </Route>
         <Route path="/Detail">
-        {test}
+        <DogPhotos pups={currentDog} />
         </Route>
       </Switch>
     </div>
