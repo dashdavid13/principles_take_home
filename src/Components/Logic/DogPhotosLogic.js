@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import DogPhotosDisplay from '../Display/DogPhotosDisplay'
 
-function DogPhotos({pups}) {
+function DogPhotosLogic({pups}) {
 
     const [isLoaded, setIsLoaded] = useState(false)
     const [dogImage, setDogImage] = useState(null)
@@ -37,17 +38,10 @@ function DogPhotos({pups}) {
 
 if(!isLoaded) return <h1>Loading</h1>
 
-// diplay the 4 random images
+
     return (
-        <>
-    <div className="image-container">
-        <img className="dog-image" alt="dog" src={dogImage["image1"].data.message}/>
-        <img className="dog-image" alt="dog" src={dogImage["image2"].data.message}/>
-        <img className="dog-image" alt="dog" src={dogImage["image3"].data.message}/>
-        <img className="dog-image" alt="dog" src={dogImage["image4"].data.message}/>
-    </div>
-    </>
+    <DogPhotosDisplay dogImage={dogImage}/>
     )
 }
 
-export default DogPhotos;
+export default DogPhotosLogic;

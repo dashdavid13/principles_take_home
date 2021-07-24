@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function HomeCard({dog,clicked}) {
+function HomeDisplay({dog,clicked}) {
     //display dog names and onClick on each one
     return (
     <div className="dogs_name_container">
@@ -10,4 +10,4 @@ function HomeCard({dog,clicked}) {
     )
 }
 
-export default HomeCard;
+export default HomeDisplay;

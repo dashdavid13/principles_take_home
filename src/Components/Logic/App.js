@@ -1,10 +1,10 @@
-import './App.css';
+import '../App.css';
 import React, { useEffect, useState } from 'react';
-import Home from './Home.js'
-import  Nav from './Nav.js'
+import HomeLogic from './HomeLogic.js'
+import  Nav from '../Display/Nav.js'
 import { Switch, Route} from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import DogPhotos from './DogPhotos.js'
+import DogPhotosLogic from './DogPhotosLogic.js'
 
 
 
@@ -63,7 +63,7 @@ if(!isLoaded) return <h1>Loading</h1>
       <Nav returnHome={returnHome} />
       <Switch>
         <Route exact path="/">
-          <Home 
+          <HomeLogic 
           dogs={dogs}
           handleSearchChange={handleSearchChange}
           search={search}
@@ -71,7 +71,7 @@ if(!isLoaded) return <h1>Loading</h1>
             />
         </Route>
         <Route path="/Detail">
-        <DogPhotos pups={currentDog} />
+        <DogPhotosLogic pups={currentDog} />
         </Route>
       </Switch>
     </div>

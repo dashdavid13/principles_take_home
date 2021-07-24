@@ -1,10 +1,10 @@
 import React from 'react'
-import HomeCard from './HomeCard.js'
-import Search from './Search.js'
+import HomeDisplay from '../Display/HomeDisplay.js'
+import Search from '../Display/Search.js'
 import { useHistory } from "react-router-dom";
 
 
-function Home({dogs,handleSearchChange, search, clicked}) {
+function HomeLogic({dogs,handleSearchChange, search, clicked}) {
 
 
 const history = useHistory()
@@ -28,7 +28,7 @@ const filteredDogs = array.filter(dog => {
  
 const mappedDogs = filteredDogs.map((e, i) => {
     
-    return (<HomeCard
+    return (<HomeDisplay
         key={i}
         dog={e}
         clicked={clicked}
@@ -52,4 +52,4 @@ const mappedDogs = filteredDogs.map((e, i) => {
     )
 }
 
-export default Home;
+export default HomeLogic;
